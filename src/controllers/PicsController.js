@@ -23,7 +23,7 @@ class PicsController {
         return res.json(pic);
       } catch (e) {
         return res.status(400).json({
-          errors: ['Aluno não existe']
+          errors: ['Usuário não existe']
         });
       }
     });
