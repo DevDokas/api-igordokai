@@ -50,15 +50,17 @@ class App {
   }
 
   middlewares() {
-    this.app.use(express.urlencoded({ extended: true }));
     this.app.use(cors(corsOptions));
+    // this.app.use(cors({ origin: '*', }));
+
+    this.app.use(express.urlencoded({ extended: true }));
     this.app.use(express.json());
     this.app.use(express.static(resolve(__dirname, '..', 'uploads')));
   }
 
   routes() {
     this.app.use('/', homeRoutes);
-    this.app.use('/users/', userRoutes);
+    this.app.use('/user/', userRoutes);
     this.app.use('/tokens/', tokenRoutes);
     this.app.use('/services/', servicesRoutes);
     this.app.use('/pics/', picsRoutes);
