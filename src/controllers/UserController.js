@@ -17,7 +17,7 @@ class UserController {
   async index(req, res) {
     try {
       const users = await User.findAll({
-        attributes: ['id', 'nome', 'email'],
+        attributes: ['id', 'nome', 'sobrenome', 'email'],
         order: [['id', 'DESC'], [Pics, 'id', 'DESC']],
         include: {
           model: Pics,
@@ -34,7 +34,7 @@ class UserController {
   async show(req, res) {
     try {
       const user = await User.findByPk(req.params.id, {
-        attributes: ['id', 'nome', 'email'],
+        attributes: ['id', 'nome', 'sobrenome', 'email'],
         order: [['id', 'DESC'], [Pics, 'id', 'DESC']],
         include: {
           model: Pics,
