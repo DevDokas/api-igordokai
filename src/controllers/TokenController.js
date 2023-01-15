@@ -33,7 +33,7 @@ class TokenController {
     return res.json({
       token,
       user: {
-        nome: user.nome, sobrenome: user.sobrenome, id, email
+        nome: user.nome, sobrenome: user.sobrenome, id, email, password
       }
     });
   }
