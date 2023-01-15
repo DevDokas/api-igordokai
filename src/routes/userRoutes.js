@@ -6,10 +6,10 @@ const router = new Router();
 
 // Não deveria existir
 router.get('/', UserController.index); // Lista usuários
-router.get('/:id', UserController.show); // Lista usuário
+// router.get('/:id', UserController.show); // Lista usuário
 
 router.post('/register', UserController.create);
-router.put('/:id', loginRequired, UserController.update);
-router.delete('/:id', loginRequired, UserController.delete);
+router.put('/', loginRequired, UserController.update);
+router.delete('/', loginRequired, UserController.delete);
 
 export default router;
